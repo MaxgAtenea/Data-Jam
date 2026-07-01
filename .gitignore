@@ -1,0 +1,11 @@
+*.xlsx
+*.txt
+*.html
+
+# Ignore Python cache directories everywhere
+**/__pycache__/
+
+# Ignore Jupyter Notebook checkpoints everywhere
+**/.ipynb_checkpoints/
+
+deprecated/
