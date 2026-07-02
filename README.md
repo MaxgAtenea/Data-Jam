@@ -129,10 +129,5 @@ Desde el directorio `src`, ejecutar los componentes en el siguiente orden:
 
 1. `rutas_distancias_tiempo.ipynb`
 2. `analisis_descriptivo_inferencia.ipynb`
-3. Desde la terminal:
-
-```bash
-python generar_visor_upl.py
-```
 
 
