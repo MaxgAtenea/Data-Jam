@@ -444,6 +444,63 @@ def plot_distribuciones(
     guardar_figura(fig, Path(figures_dir) / f"{convocatoria.lower()}_distribuciones.png")
     return fig
 
+def plot_distribuciones_2(
+    df: pd.DataFrame,
+    convocatoria: str,
+    figures_dir: str | Path,
+    titulo: str,
+    variables: Sequence[str],
+) -> plt.Figure:
+    """Grafica distribuciones de dos variables.
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        Datos de una convocatoria.
+    convocatoria : str
+        Nombre de la convocatoria.
+    figures_dir : str or pathlib.Path
+        Carpeta para guardar la figura.
+    titulo : str
+        Título principal de la figura.
+    variables : sequence of str
+        Dos variables a visualizar.
+
+    Returns
+    -------
+    matplotlib.figure.Figure
+        Figura generada.
+    """
+    datos = ultima_observacion_por_estudiante(df)
+
+    fig, axes = plt.subplots(1, 2, figsize=(10, 4.5))
+
+    for ax, variable in zip(axes, variables):
+        serie = _limitar_para_visualizacion(datos[variable])
+        sns.histplot(
+            serie,
+            bins=32,
+            kde=True,
+            color="#6E93B3",
+            edgecolor="white",
+            ax=ax,
+        )
+        ax.set_title(_label(variable), loc="left", fontsize=11)
+        ax.set_xlabel(_label(variable))
+        ax.set_ylabel("Frecuencia")
+
+    _titulo_figura(
+        fig,
+        titulo,
+        "Valores extremos se recortan visualmente en p1-p99 para mejorar legibilidad; las tablas conservan los valores originales.",
+    )
+
+    guardar_figura(
+        fig,
+        Path(figures_dir) / f"{convocatoria.lower()}_distribuciones.png",
+    )
+    return fig
+
 
 def plot_comparacion_estado(
     df: pd.DataFrame,
