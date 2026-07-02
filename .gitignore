@@ -1,6 +1,7 @@
 *.xlsx
 *.txt
 *.html
+*.pptx
 
 # Ignore Python cache directories everywhere
 **/__pycache__/

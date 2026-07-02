@@ -18,7 +18,7 @@ Este proyecto explora si la distancia entre el domicilio del estudiante y su ins
 
 ## Metodología
 
-El proyecto realiza un análisis espacial y descriptivo para explorar la relación entre la accesibilidad geográfica y el desempeño académico de estudiantes universitarios en modalidad presencial.
+El proyecto realiza un análisis espacial, descriptivo y estadístico, para explorar la relación entre la accesibilidad geográfica y el desempeño académico de estudiantes universitarios en modalidad presencial.
 
 Las principales actividades desarrolladas son:
 
@@ -27,13 +27,10 @@ Las principales actividades desarrolladas son:
 * Agregar indicadores espaciales a nivel de Unidad de Planeamiento Local (UPL), incluyendo distancia promedio a la IES, acceso al transporte público, tasas de abandono y porcentaje promedio de avance académico.
 * Construir visualizaciones interactivas para explorar la distribución espacial de estos indicadores.
 * Calcular estadísticas descriptivas y analizar la relación entre las variables de accesibilidad (distancia y transporte) y las variables de desempeño académico (abandono y porcentaje acumulado de créditos aprobados).
-
-Actualmente las distancias se calculan utilizando la distancia euclidiana como una aproximación simplificada de la separación espacial entre los puntos.
-
-Como trabajo futuro se propone incorporar medidas más realistas de accesibilidad mediante el cálculo de:
-
 * Tiempo estimado de desplazamiento en transporte público.
 * Distancia recorrida sobre la red vial y de transporte público.
+
+![alt text](vista_mapa.png)
 
 ---
 
@@ -48,5 +45,5 @@ Como trabajo futuro se propone incorporar medidas más realistas de accesibilida
 
 ## Instrucciones de ejecución
 
-* **src/analisis_descriptivo.ipynb**: ejecuta el análisis exploratorio, las estadísticas descriptivas y las visualizaciones utilizadas en el estudio.
+* **src/analisis_descriptivo.ipynb**: Ejecuta el análisis exploratorio, las estadísticas descriptivas y las visualizaciones utilizadas en el estudio de los indicadores de: 'acceso al transporte', 'Distancia a la IES' y su correlación con el '% aprobación acumulada', estado ('abandono', 'matriculado')
 * **src/spatial_analysis.py**: genera el visor geográfico interactivo con indicadores agregados por UPL, así como una muestra anonimizada de los domicilios de los estudiantes (mediante desplazamiento aleatorio de las ubicaciones), las Instituciones de Educación Superior (IES), los paraderos del SITP y las estaciones de TransMilenio.
