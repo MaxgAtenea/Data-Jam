@@ -47,5 +47,50 @@ Las principales actividades desarrolladas son:
 
 ## Instrucciones de ejecución
 
-* **src/analisis_descriptivo.ipynb**: Ejecuta el análisis exploratorio, las estadísticas descriptivas y las visualizaciones utilizadas en el estudio de los indicadores de: 'acceso al transporte', 'Distancia a la IES' y su correlación con el '% aprobación acumulada', estado ('abandono', 'matriculado')
-* **src/spatial_analysis.py**: genera el visor geográfico interactivo con indicadores agregados por UPL, así como una muestra anonimizada de los domicilios de los estudiantes (mediante desplazamiento aleatorio de las ubicaciones), las Instituciones de Educación Superior (IES), los paraderos del SITP y las estaciones de TransMilenio.
+El proyecto se divide en dos etapas principales.
+
+### 1. Análisis descriptivo y espacial
+
+Esta etapa construye el panel de datos enriquecido, realiza el análisis exploratorio y genera el visor geográfico interactivo.
+
+#### Componentes
+
+* **`src/src_panel_basico.ipynb`**
+  Construye el panel de datos base, incorporando para cada estudiante:
+
+  * Distancia euclidiana entre el domicilio y la Institución de Educación Superior (IES).
+  * Número de paraderos del SITP cercanos.
+  * Número de estaciones de TransMilenio cercanas.
+
+* **`src/analisis_descriptivo.ipynb`**
+  Realiza el análisis exploratorio de datos (EDA), incluyendo estadísticas descriptivas, visualizaciones y análisis de correlación entre los indicadores de accesibilidad geográfica (`distancia_ies`, `acceso_transporte`) y las variables de desempeño académico (`pct_aprob_acum` y `estado`).
+
+* **`src/generar_visor_upl.py`**
+  Genera un visor geográfico interactivo con indicadores agregados por Unidad de Planeamiento Local (UPL). El visor incluye:
+
+  * Indicadores espaciales agregados por UPL.
+  * Una muestra anonimizada de los domicilios de los estudiantes (mediante desplazamiento aleatorio de las ubicaciones para preservar la privacidad).
+  * Instituciones de Educación Superior (IES).
+  * Paraderos del SITP.
+  * Estaciones de TransMilenio.
+
+#### Orden de ejecución
+
+Desde el directorio `src`, ejecutar los componentes en el siguiente orden:
+
+1. `src_panel_basico.ipynb`
+2. `analisis_descriptivo.ipynb`
+3. Desde la terminal:
+
+```bash
+python generar_visor_upl.py
+```
+
+---
+
+### 2. Inferencia estadística
+
+**Estado:** En desarrollo (TBD).
+
+Esta etapa incorporará modelos estadísticos para evaluar la asociación entre la accesibilidad geográfica y el desempeño académico, controlando por características individuales y del contexto.
+
