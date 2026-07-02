@@ -31,7 +31,8 @@ Las principales actividades desarrolladas son:
 * Distancia recorrida sobre la red vial y de transporte público.
 
 ![alt text](vista_mapa.png)
-![alt text](kaplan_meier.png)
+![alt text](kaplan_meier.jpeg)
+
 
 ---
 
