@@ -58,7 +58,7 @@ A partir de la tabla generada en el paso anterior (`outputs/estudiantes_con_ruta
 
 ![alt text](vista_mapa.png)
 ![alt text](kaplan_meier.jpeg)
-
+![alt text](ju3_distancia_ies_abandono_acumulado.png)
 
 ---
 
