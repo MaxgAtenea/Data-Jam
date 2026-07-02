@@ -57,7 +57,7 @@ A partir de la tabla generada en el paso anterior (`outputs/estudiantes_con_ruta
 5. **Relación tiempo de viaje vs. % de créditos aprobados**, con línea de tendencia y paneles por localidad.
 
 ![alt text](vista_mapa.png)
-![alt text](kaplan_meier.jpeg)
+![alt text](kaplan_meier.png)
 ![alt text](ju3_distancia_ies_abandono_acumulado.png)
 
 ---
